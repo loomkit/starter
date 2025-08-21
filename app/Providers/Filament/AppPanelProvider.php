@@ -31,6 +31,7 @@ class AppPanelProvider extends PanelProvider
             ->brandLogo(asset('logo.svg'))
             ->brandLogoHeight('2.5rem')
             ->sidebarCollapsibleOnDesktop()
+            ->profile(isSimple: false)
             ->login()
             ->registration()
             ->colors([
