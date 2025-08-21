@@ -2,7 +2,7 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "loomkit/starter",
     "type": "project",
-    "description": "The Loom Starter Kit 🚀",
+    "description": "The Loom Starter Kit \ud83d\ude80",
     "keywords": [
         "boilerplate",
         "laravel",
@@ -16,6 +16,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "filament/filament": "^4.0",
         "sikessem/framework": "^0.10.0",
         "spatie/laravel-permission": "^6.21"
     },
@@ -37,7 +38,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
