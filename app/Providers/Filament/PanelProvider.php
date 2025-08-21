@@ -28,7 +28,6 @@ abstract class PanelProvider extends BasePanelProvider
             ->favicon(asset('favicon.svg'))
             ->brandLogo(asset('logo.svg'))
             ->brandLogoHeight('2.5rem')
-            ->login()
             ->colors([
                 'primary' => Color::Blue,
             ])
@@ -42,6 +41,8 @@ abstract class PanelProvider extends BasePanelProvider
                 Platform::Mac => '⌘K',
                 default => '/',
             })
+            ->databaseNotifications()
+            ->login()
             ->profile(isSimple: false)
             ->pages([
                 Dashboard::class,
