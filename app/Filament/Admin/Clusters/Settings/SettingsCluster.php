@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Clusters\Settings;
+namespace App\Filament\Admin\Clusters\Settings;
 
 use BackedEnum;
 use Filament\Clusters\Cluster;
