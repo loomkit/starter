@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="loom-logo"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title
+     id="logo-title">Loom Logo</title>
+  <desc
+     id="logo-desc">Woven hashtag mark with rounded ends, no background.</desc>
+  <mask
+     id="mask-rects">
+    <rect
+       x="0"
+       y="0"
+       width="1024"
+       height="1024"
+       fill="#ffffff"
+       id="rect1" />
+    <rect
+       x="228"
+       y="296"
+       width="70"
+       height="144"
+       fill="#000000"
+       id="rect2" />
+    <rect
+       x="438"
+       y="296"
+       width="70"
+       height="144"
+       fill="#000000"
+       id="rect3" />
+    <rect
+       x="296"
+       y="516"
+       width="144"
+       height="70"
+       fill="#000000"
+       id="rect4" />
+    <rect
+       x="296"
+       y="726"
+       width="144"
+       height="70"
+       fill="#000000"
+       id="rect5" />
+    <rect
+       x="516"
+       y="584"
+       width="70"
+       height="144"
+       fill="#000000"
+       id="rect6" />
+    <rect
+       x="726"
+       y="584"
+       width="70"
+       height="144"
+       fill="#000000"
+       id="rect7" />
+    <rect
+       x="584"
+       y="228"
+       width="144"
+       height="70"
+       fill="#000000"
+       id="rect8" />
+    <rect
+       x="584"
+       y="438"
+       width="144"
+       height="70"
+       fill="#000000"
+       id="rect9" />
+  </mask>
+  <g
+     fill="none"
+     stroke="#3b82f6"
+     stroke-width="140"
+     stroke-linecap="round"
+     mask="url(#mask-rects)"
+     id="g12"
+     transform="matrix(0.60663507,0,0,0.60663507,-54.597156,-54.597156)">
+    <line
+       x1="160"
+       y1="368"
+       x2="864"
+       y2="368"
+       id="line9" />
+    <line
+       x1="160"
+       y1="656"
+       x2="864"
+       y2="656"
+       id="line10" />
+    <line
+       x1="368"
+       y1="160"
+       x2="368"
+       y2="864"
+       id="line11" />
+    <line
+       x1="656"
+       y1="160"
+       x2="656"
+       y2="864"
+       id="line12" />
+  </g>
+</svg>
