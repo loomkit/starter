@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        env('ADMIN_AUTH_GUARD', 'admin') => [
+            'driver' => 'session',
+            'provider' => env('ADMIN_AUTH_PROVIDER', 'admins'),
+        ],
     ],
 
     /*
@@ -63,6 +68,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+
+        env('ADMIN_AUTH_PROVIDER', 'admins') => [
+            'driver' => 'eloquent',
+            'model' => env('ADMIN_AUTH_MODEL', App\Models\User::class),
         ],
 
         // 'users' => [
@@ -94,6 +104,13 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        env('ADMIN_AUTH_PASSWORD_BROKER', 'admins') => [
+            'provider' => env('ADMIN_AUTH_PROVIDER', 'admins'),
+            'table' => env('ADMIN_AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
             'expire' => 60,
             'throttle' => 60,
         ],

@@ -1,7 +1,10 @@
 <?php
 
+use App\Enums\AdminRole;
+use App\Enums\UserRole;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -114,6 +117,20 @@ return new class extends Migration
         app('cache')
             ->store(config('permission.cache.store') != 'default' ? config('permission.cache.store') : null)
             ->forget(config('permission.cache.key'));
+
+        foreach (AdminRole::values() as $adminRole) {
+            DB::table($tableNames['roles'])->insert([
+                'name' => $adminRole,
+                'guard_name' => config('panels.admin.guard'),
+            ]);
+        }
+
+        foreach (UserRole::values() as $userRole) {
+            DB::table($tableNames['roles'])->insert([
+                'name' => $userRole,
+                'guard_name' => config('panels.app.guard'),
+            ]);
+        }
     }
 
     /**
