@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Actions\Action;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -43,6 +44,13 @@ abstract class PanelProvider extends BasePanelProvider
                 default => '/',
             })
             ->databaseNotifications()
+            ->userMenuItems([
+                Action::make('home')
+                    ->url(url('/'))
+                    ->icon('heroicon-s-home')
+                    ->label(__('Home'))
+                    ->sort(-1),
+            ])
             ->login()
             ->profile(isSimple: false)
             ->pages([
