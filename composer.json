@@ -16,7 +16,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "sikessem/framework": "^0.10.0"
+        "sikessem/framework": "^0.10.0",
+        "spatie/laravel-permission": "^6.21"
     },
     "require-dev": {
         "sikessem/laravel-devtools": "^1.4"
