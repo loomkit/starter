@@ -3,8 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Concerns\HasPhoto;
 use App\Enums\AdminRole;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,12 +14,13 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
 
     use HasPermissions;
+    use HasPhoto;
     use HasRoles;
     use Notifiable;
 
@@ -28,8 +31,18 @@ class User extends Authenticatable implements FilamentUser
      */
     protected $fillable = [
         'name',
+        'photo_path',
         'email',
         'password',
+    ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array<int,string>
+     */
+    protected $appends = [
+        'photo_url',
     ];
 
     /**
@@ -62,5 +75,10 @@ class User extends Authenticatable implements FilamentUser
         }
 
         return $panel->getId() === config('panels.app.id') && auth()->guard(config('panels.app.guard'))->check();
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->photo_url;
     }
 }
