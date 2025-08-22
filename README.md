@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://loomkit.github.io" target="_blank">Loom <img src="https://raw.githubusercontent.com/siguici/art/HEAD/images/loom.svg" width="28" alt="Loom Logo"></a></h1>
+<h1 align="center"><a href="https://loomkit.github.io" target="_blank">Loom <img src="https://raw.githubusercontent.com/loomkit/starter/HEAD/public/favicon.svg" alt="🧵" width="28" /></a></h1>
 
 <p align="center">
 <a href="https://github.com/loomkit/starter/actions"><img src="https://github.com/loomkit/starter/workflows/tests/badge.svg" alt="Build Status"></a>
