@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cdb2e8d87d693eb5f5aded7d80bf77a",
+    "content-hash": "7792d82c36b837661e072dd8c0e279c5",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3311,6 +3311,76 @@
                 }
             ],
             "time": "2025-07-17T05:12:15+00:00"
+        },
+        {
+            "name": "loomkit/loom",
+            "version": "v0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/loomkit/loom.git",
+                "reference": "4d00f1f8e860737487319262e1a45367cb6a6765"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/loomkit/loom/zipball/4d00f1f8e860737487319262e1a45367cb6a6765",
+                "reference": "4d00f1f8e860737487319262e1a45367cb6a6765",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^12.24",
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.92"
+            },
+            "require-dev": {
+                "filament/filament": "^4.0",
+                "sikessem/framework": "^0.10.0",
+                "sikessem/laravel-devtools": "^1.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Loom": "Loom\\LoomManager"
+                    },
+                    "providers": [
+                        "Loom\\LoomServiceProvider"
+                    ],
+                    "dont-discover": []
+                },
+                "branch-alias": {
+                    "dev-main": "0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Loom\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sigui Kessé Emmanuel",
+                    "email": "siguici@proton.me",
+                    "homepage": "https://siguici.deno.dev"
+                }
+            ],
+            "description": "📦️ Loom provides useful commands, modules, features and resources for your web application.",
+            "homepage": "https://loomkit.github.io",
+            "keywords": [
+                "laravel",
+                "loom",
+                "loomkit",
+                "php"
+            ],
+            "support": {
+                "chat": "https://github.com/orgs/loomkit/discussions",
+                "issues": "https://github.com/loomkit/loom/issues",
+                "source": "https://github.com/loomkit/loom"
+            },
+            "time": "2025-08-22T06:45:06+00:00"
         },
         {
             "name": "masterminds/html5",
