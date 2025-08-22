@@ -64,6 +64,9 @@
   "extra": {
     "laravel": {
       "dont-discover": []
+    },
+    "branch-alias": {
+      "dev-main": "0.x-dev"
     }
   },
   "config": {
