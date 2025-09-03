@@ -19,6 +19,7 @@
     "filament/filament": "^4.0",
     "loomkit/loom": "^0.0.0",
     "sikessem/framework": "^0.10.0",
+    "silviolleite/laravelpwa": "^2.0",
     "spatie/laravel-permission": "^6.21"
   },
   "require-dev": {
