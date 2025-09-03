@@ -6,6 +6,8 @@
 
         <title>{{ config('app.name', 'Loom') }}</title>
 
+        <link rel="shorcut icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml"/>
+
         @laravelPWA
 
         <!-- Fonts -->
