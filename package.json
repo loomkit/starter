@@ -7,6 +7,7 @@
     "check": "tsc --noEmit --skipLibCheck && biome ci",
     "dev": "vite",
     "fix": "bun fmt && bun lint",
+    "fix:unsafe": "biome check --fix --unsafe",
     "fmt": "biome format --write .",
     "lint": "biome check --write ."
   },
