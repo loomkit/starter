@@ -64,9 +64,9 @@ installBtn.addEventListener('click', async () => {
 
   const choiceResult = await deferredPrompt.userChoice;
   if (choiceResult.outcome === 'accepted') {
-    console.log('User accepted the installation');
+    console.log('✅ User accepted the installation');
   } else {
-    console.log('User dismissed the installation');
+    console.log('❌ User dismissed the installation');
   }
 
   deferredPrompt = null;
