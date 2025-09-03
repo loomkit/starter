@@ -9,35 +9,20 @@ interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
   readonly userChoice: Promise<{
     outcome: 'accepted' | 'dismissed';
-    platform: string;
   }>;
   prompt(): Promise<void>;
 }
 
-const getPlatformIcon = (): string => {
-  const platform = navigator.platform.toLowerCase();
-  if (/mac|iphone|ipad|ipod/.test(platform)) {
-    return '🍏 Darwin';
-  }
-  if (/win/.test(platform)) {
-    return '🪟 Windows';
-  }
-  if (/linux/.test(platform)) {
-    return '🐧 Linux';
-  }
-  return '❓ Unknown';
-};
-
 const isIos = (): boolean => {
+  const re = /(ipad|iphone|ipod)/g;
   const ua = window.navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test(ua);
+  const platform = navigator.platform.toLowerCase();
+  return re.test(ua) || re.test(platform);
 };
 
 const isInStandaloneMode = (): boolean =>
   window.matchMedia('(display-mode: standalone)').matches ||
   (window.navigator as any).standalone === true;
-
-console.log('Platform:', getPlatformIcon());
 
 window.addEventListener('load', () => {
   if (isInStandaloneMode()) {
@@ -46,6 +31,11 @@ window.addEventListener('load', () => {
 
   if (isIos()) {
     iosInstallMsg.style.display = 'block';
+    installBtn.onclick = () => {
+      alert(
+        `On iOS:\n1. Tap the Share 📤 button in Safari\n2. Select 'Add to Home Screen'\n3. Launch ${import.meta.env.VITE_APP_NAME || 'Loomkit'} from your Home Screen.`,
+      );
+    };
   }
 });
 

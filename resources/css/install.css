@@ -1,0 +1,26 @@
+.pwa-install-btn {
+  @apply bottom-5
+    bg-[#7878ff]
+    text-white
+    rounded-xl
+    px-5 py-3
+    text-base shadow-[0_4px_15px_rgba(0,0,0,0.2)]
+    transition-transform transition-shadow duration-200 ease-in-out animate-bounce
+    cursor-pointer
+    hover:-translate-y-[3px] hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] hover:animate-none;
+}
+
+.pwa-ios-msg {
+  @apply bottom-20
+    max-w-[280px]
+    flex items-center gap-2
+    bg-[#fff3cd] text-[#856404]
+    border border-[#ffeeba] rounded-xl
+    px-4 py-3
+    text-sm shadow-[0_4px_15px_rgba(0,0,0,0.2)];
+}
+
+.pwa-install-btn,
+.pwa-ios-msg {
+  @apply fixed z-[9999] right-1/2 translate-x-1/2 max-w-[90%] md:right-5 md:translate-x-0;
+}

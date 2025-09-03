@@ -12,14 +12,6 @@
         </h1>
         @if (Route::has('login'))
             <nav class="flex items-center justify-end gap-4">
-                <button id="installBtn" class="pwa-install-btn" style="display:none;">
-                📲 Install Loomkit
-                </button>
-
-                <div id="iosInstallMsg" class="pwa-ios-msg" style="display:none;">
-                To install Loomkit on your home screen: <br>
-                Tap <span class="ios-icon">⬆️</span> then "Add to Home Screen"
-                </div>
                 @auth
                     <a
                         href="{{ url('/dashboard') }}"
