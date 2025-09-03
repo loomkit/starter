@@ -1,8 +1,20 @@
-let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
-const iosInstallMsg = document.getElementById('iosInstallMsg');
+let deferredPrompt: BeforeInstallPromptEvent | null = null;
 
-function getPlatformIcon() {
+const installBtn = document.getElementById('installBtn') as HTMLButtonElement;
+const iosInstallMsg = document.getElementById(
+  'iosInstallMsg',
+) as HTMLDivElement;
+
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: string[];
+  readonly userChoice: Promise<{
+    outcome: 'accepted' | 'dismissed';
+    platform: string;
+  }>;
+  prompt(): Promise<void>;
+}
+
+const getPlatformIcon = (): string => {
   const platform = navigator.platform.toLowerCase();
   if (/mac|iphone|ipad|ipod/.test(platform)) {
     return '🍏 Darwin';
@@ -14,22 +26,22 @@ function getPlatformIcon() {
     return '🐧 Linux';
   }
   return '❓ Unknown';
-}
+};
 
-const isIos = () => {
+const isIos = (): boolean => {
   const ua = window.navigator.userAgent.toLowerCase();
   return /iphone|ipad|ipod/.test(ua);
 };
 
-const isInStandaloneMode = () =>
+const isInStandaloneMode = (): boolean =>
   window.matchMedia('(display-mode: standalone)').matches ||
-  window.navigator.standalone === true;
+  (window.navigator as any).standalone === true;
 
 console.log('Platform:', getPlatformIcon());
 
 window.addEventListener('load', () => {
   if (isInStandaloneMode()) {
-    return; // already installed
+    return;
   }
 
   if (isIos()) {
@@ -37,9 +49,9 @@ window.addEventListener('load', () => {
   }
 });
 
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener('beforeinstallprompt', (e: Event) => {
   e.preventDefault();
-  deferredPrompt = e;
+  deferredPrompt = e as BeforeInstallPromptEvent;
   installBtn.style.display = 'block';
 });
 
@@ -48,10 +60,10 @@ installBtn.addEventListener('click', async () => {
     return;
   }
 
-  deferredPrompt.prompt(); // Show native install dialog
+  await deferredPrompt.prompt();
 
-  const { outcome } = await deferredPrompt.userChoice;
-  if (outcome === 'accepted') {
+  const choiceResult = await deferredPrompt.userChoice;
+  if (choiceResult.outcome === 'accepted') {
     console.log('User accepted the installation');
   } else {
     console.log('User dismissed the installation');

@@ -42,7 +42,8 @@
       },
       "suspicious": {
         "noAssignInExpressions": "off",
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noExplicitAny": "off"
       }
     }
   },
