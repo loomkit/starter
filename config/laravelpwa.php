@@ -65,22 +65,15 @@ return [
             '2778x1284' => '/icons/splash-2778-1284.png',
             '2796x1290' => '/icons/splash-2796-1290.png',
         ],
-
-        // Shortcuts
         'shortcuts' => [
             [
-                'name' => 'Shortcut Link 1',
-                'description' => 'Shortcut Link 1 Description',
-                'url' => '/shortcutlink1',
+                'name' => 'Dashboard',
+                'description' => 'Go to your dashboard',
+                'url' => '/dashboard',
                 'icons' => [
                     'src' => '/icons/manifest-icon-192.maskable.png',
                     'purpose' => 'any',
                 ],
-            ],
-            [
-                'name' => 'Shortcut Link 2',
-                'description' => 'Shortcut Link 2 Description',
-                'url' => '/shortcutlink2',
             ],
         ],
         'custom' => [],
