@@ -43,6 +43,9 @@ window.addEventListener('beforeinstallprompt', (e: Event) => {
   e.preventDefault();
   deferredPrompt = e as BeforeInstallPromptEvent;
   installBtn.style.display = 'block';
+  installBtn.removeAttribute('hidden');
+  installBtn.classList.remove('opacity-0');
+  installBtn.classList.add('opacity-100');
 });
 
 installBtn.addEventListener('click', async () => {
@@ -61,4 +64,7 @@ installBtn.addEventListener('click', async () => {
 
   deferredPrompt = null;
   installBtn.style.display = 'none';
+  installBtn.setAttribute('hidden', '');
+  installBtn.classList.remove('opacity-100');
+  installBtn.classList.add('opacity-0');
 });
