@@ -1,60 +1,23 @@
-# Build
-/lib/
-/lib-types/
-/server/
-/public/hot
-/public/storage
-/public/static/
-/storage/*.key
-
-# Development
-/node_modules/
-/vendor/
-Homestead.json
-Homestead.yaml
-
-# Environment
+*.log
+.DS_Store
 .env
 .env.backup
-/pg.load
-
-# Cache
+.env.production
+.phpactor.json
 *.cache
-.mf
-.vscode/
-.rollup.cache
-tsconfig.tsbuildinfo
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-error_log*
-
-# Backups
-*.backup
-backup_*
-
-# Editor
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Yarn
-.yarn/*
-!.yarn/releases
-
-# Tests
-/test-results/
-/playwright-report/
-/playwright/.cache/
-/coverage
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
