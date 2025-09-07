@@ -17,8 +17,9 @@
   "require": {
     "php": "^8.3",
     "filament/filament": "^4.0",
-    "loomkit/loom": "^0.0.0",
-    "sikessem/framework": "^0.10.0",
+    "laravel/folio": "^1.1",
+    "laravel/framework": "^12.28",
+    "loomkit/core": "^0.1.0",
     "silviolleite/laravelpwa": "^2.0",
     "spatie/laravel-permission": "^6.21"
   },
